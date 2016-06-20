@@ -1,0 +1,37 @@
+{
+  "name": "reactdemo",
+  "version": "1.0.0",
+  "description": "reactdemo",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify --debug index.js > bundle.js",
+    "build-dist": "NODE_ENV=production browserify index.js | uglifyjs -m > bundle.min.js",
+    "watch": "watchify --debug index.js -o bundle.js"
+  },
+  "author": "fishYu",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "jsx-loader": "^0.13.2",
+    "object-assign": "^4.1.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1",
+    "reactify": "^1.1.1",
+    "style-loader": "^0.13.1",
+    "uglify-js": "^2.6.3",
+    "url-loader": "^0.5.7",
+    "watchify": "^3.7.0",
+    "webpack": "^1.13.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "dependencies": {
+    "react-router": "^2.4.1"
+  }
+}
