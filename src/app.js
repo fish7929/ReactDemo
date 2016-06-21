@@ -11,15 +11,18 @@ var HelloWorld = require("./components/helloworld.js");
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var browserHistory = require('react-router').browserHistory;
-//ReactDOM.render(<Logo></Logo>, document.getElementById("container"));
+var IndexRoute = require('react-router').IndexRoute;
+//ReactDOM.render(<HelloWorld></HelloWorld>, document.getElementById("container"));
 
 var appRouter = (
     <Router history={browserHistory}>
-        <Route title="Test" path="/" handle={Logo}>
-            <Route name="Hello World" title="hello" path="/hello" handler={HelloWorld} />
+        <Route title="Test" path="/" handler={Logo}>
+            <IndexRoute component={Logo} />
+            <Route path="hello" handler={HelloWorld} />
         </Route>
     </Router>
 );
 
 ReactDOM.render(appRouter, document.getElementById("container"));
+
 

@@ -11,6 +11,9 @@
   "author": "fishYu",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
     "browserify": "^13.0.1",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",

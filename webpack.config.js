@@ -11,16 +11,21 @@ module.exports = {
         //生成的打包文件名
         filename : "build.js"
     },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     module : {
         loaders : [
             {
                 //用于匹配加载器支持的文件格式的正则表达式
-                test : /\.(js)$/,
+                test : /\.(js|jsx)$/,
 
                 //要使用的加载器类型
                 //加载器支持通过查询字符串的方式接收参数
+                exclude: /node_modules/,
                 loader : 'jsx-loader?harmony'
             },
+//            { test: /\.js|jsx$/, loaders: ['babel'] },
             {
                 //用于匹配加载器支持的文件格式的正则表达式
                 test : /\.(css)$/,
